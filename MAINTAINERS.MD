@@ -1,4 +1,4 @@
 | Org                    | Name                                      | GitHub Username        |
 | -----------------------| ------------------------------------------| -----------------------|
-| TIM                    | Fabrizio Moggio                           | FabrizioMoggio         
-|T - Systems             | Kanhaiya Sharma                           | kans-sharma            |
+| TIM                    | Fabrizio Moggio                           | FabrizioMoggio         |
+| Deutsche Telekom AG    | Kanhaiya Sharma                           | kans-sharma            |
