@@ -11,7 +11,7 @@
 
 Sandbox API Repository to describe, develop, document, and test the EnergyFootprintNotification Service API(s). The repository does not yet belong to a CAMARA Sub Project. 
 
-* API Repository wiki page: https://lf-camaraproject.atlassian.net/wiki/x/AgDe !! Update with concrete link when available and delete the task
+* API Repository wiki page: https://lf-camaraproject.atlassian.net/wiki/x/aoDJAw
 
 ## Scope
 
@@ -37,5 +37,5 @@ The repository has no (pre)releases yet, work in progress is within the main bra
     * Minutes: Access [meeting minutes](https://lf-camaraproject.atlassian.net/wiki/x/AgDe) !! update this link to your wiki page using the "Share" link and delete the task
 * Mailing List
     <!-- Note: the $mailinglistname$ is either already existing (for API Repositories within a Sub Projects) or will be created by the CAMARA Admin Team. -->
-    * Subscribe / Unsubscribe to the mailing list <https://lists.camaraproject.org/g/$mailinglistname§>.
+    * Subscribe / Unsubscribe to the mailing list https://lists.camaraproject.org/g/sp-efn.
     * A message to the community of this Sub Project can be sent using <$mailinglistname§@lists.camaraproject.org>.
