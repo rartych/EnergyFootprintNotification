@@ -17,7 +17,7 @@ Sandbox API Repository to describe, develop, document, and test the EnergyFootpr
 
 * Service API(s) “EnergyFootprintNotification” (see [APIBacklog.md](https://github.com/camaraproject/APIBacklog/blob/main/documentation/APIbacklog.md)) 
 * The API(s) provide(s) the customer with the ability to:  
-  * The Energy Footprint Notification API provides, to the API Consumer, information about the E2E energy consumption and Carbon Footprint for a specified service that is provided by a certain number of active instances of an application. The applications that are monitored for their energy consumption are the ones managed by the operator and that run on top of the operator’s infrastructure.
+  * Retrieve the information about the E2E energy consumption and Carbon Footprint for a specified service that is provided by a certain number of active instances of an application. The applications that are monitored for their energy consumption are the ones managed by the operator and that run on top of the operator’s infrastructure. For example the application managed with the [CAMARA Edge Cloud APIs](https://github.com/camaraproject/EdgeCloud).
 * Describe, develop, document, and test the API(s)
 * Started: January 2024
 
