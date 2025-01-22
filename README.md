@@ -38,4 +38,4 @@ The repository has no (pre)releases yet, work in progress is within the main bra
 * Mailing List
     <!-- Note: the $mailinglistname$ is either already existing (for API Repositories within a Sub Projects) or will be created by the CAMARA Admin Team. -->
     * Subscribe / Unsubscribe to the mailing list https://lists.camaraproject.org/g/sp-efn.
-    * A message to the community of this Sub Project can be sent using <$mailinglistname§@lists.camaraproject.org>.
+    * A message to the community of this Sub Project can be sent using sp-efn@lists.camaraproject.org.
