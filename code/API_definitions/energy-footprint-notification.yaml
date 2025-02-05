@@ -7,7 +7,7 @@ info:
   title: Energy Footprint Notification
   description: |
     ## Overview
-    The Energy Footprint Notification (EFN) API provides the API Consumer 
+    The Energy Footprint Notification (EFN) API provides the API Consumer
     with information about the E2E energy consumption and carbon footprint of a
     Service exposed by a set of applications instances.
     ## Introduction
@@ -434,7 +434,7 @@ components:
               description: An instant of time, ending of the TimePeriod.
                 If not included, then the period has no ending date.
           required:
-          - startDate
+            - startDate
         notificationSink:
           $ref: '#/components/schemas/NotificationSink'
         RequestID:
