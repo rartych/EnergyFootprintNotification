@@ -7,7 +7,7 @@ info:
   title: Energy Footprint Notification
   description: |
     ## Overview
-    The Energy Footprint Notification (EFN) API provides the API Consumer
+    The Energy Footprint Notification (EFN) API provides the API Consumer TO DELETE MEGA LINTER TEST 
     with information about the E2E energy consumption and carbon footprint of a
     Service exposed by a set of applications instances.
     ## Introduction
