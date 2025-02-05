@@ -16,7 +16,7 @@ info:
     Operator.The EFN API provides the API Consumer (e.g. the Service Provider)
     with the information about the overall E2E energy consumption and carbon
     footprint (greenhouse gasses emissions) of the Service produced by all
-    applications instances hosted by the Telco Operator. 
+    applications instances hosted by the Telco Operator.
     The reported energy consumption and carbon footprint consider the energy
     used to run the applications instances in the Data Centers and the energy
     absorbed along the Operator's network to provide the Service for the Telco
@@ -102,7 +102,7 @@ info:
     period of time?
     - Intent2: Which is the overall carbon footprint for my Service in this
     period of time?
-  
+
     The input for the above intents is:
     - Input_Intent1: Set of applications identifiers and period of time.
     - Input_Intent2: Set of applications identifiers and period of time.
@@ -110,7 +110,7 @@ info:
     The output for the above intents is:
     - Output_Intent1: energy consumption in Kw/h.
     - Output_Intent2: greenhouse gasses emission in tonnes.
-    
+
     The related endpoints are:
     - Intent1: /overall-energy-consumption
     - Intent2: /overall-carbon-footprint
@@ -136,7 +136,7 @@ servers:
         default: http://localhost:9091
         description: API root for the Energy Footprint Notification API
 security:
-- notificationsBearerAuth: []
+  - notificationsBearerAuth: []
 ############################################################################
 #                                     Tags                                #
 ############################################################################
@@ -145,12 +145,12 @@ tags:
     description: Request information on the energy consumption of the service.
   - name: Carbon footprint information retrieval
     description: Request information on the carbon footprint for the service.
-  - name: Energy consumption Callback Operation 
-    description: callback to provide the energy consumption data to the API 
+  - name: Energy consumption Callback Operation
+    description: callback to provide the energy consumption data to the API
      Consumer
-  - name: Carbon footprint Callback Operation 
-    description: callback to provide the energy consumption data to the API 
-     Consumer     
+  - name: Carbon footprint Callback Operation
+    description: callback to provide the energy consumption data to the API
+     Consumer
 ############################################################################
 #                                     Paths                                #
 ############################################################################
@@ -260,17 +260,17 @@ paths:
 ############################################################################
 components:
   securitySchemes:
-    oAuth2:    
+    oAuth2:
       type: oauth2
       description: This API uses OAuth 2
         [More info](https://api.example.com/docs/auth)
-      flows:        
+      flows:
         clientCredentials:
           tokenUrl: 'https://example.com/oauth/token'
           scopes:
-            'energy-footprint-notification:overall-energy-consumption:read': 
+            'energy-footprint-notification:overall-energy-consumption:read':
               Grants access to read-only data in the Energy resources
-            'energy-footprint-notification:overall-energy-consumption:write': 
+            'energy-footprint-notification:overall-energy-consumption:write':
               Grants write access to the Energy resources
             'energy-footprint-notification:overall-carbon-footprint:read':
               Grants access to read-only data in the Carbon Footprint resources
@@ -279,7 +279,7 @@ components:
     notificationsBearerAuth:
       type: http
       scheme: bearer
-      bearerFormat: "{$request.body#/sinkCredential.credentialType}"              
+      bearerFormat: "{$request.body#/sinkCredential.credentialType}"
   parameters:
     x-correlator:
       name: x-correlator
@@ -302,15 +302,15 @@ components:
         post:
           tags:
             - Energy consumption Callback Operation
-          summary: Provides back the result of the analysis on the energy 
+          summary: Provides back the result of the analysis on the energy
            consumption
-          description: once the system as calculated the energy consumption of 
+          description: once the system as calculated the energy consumption of
            the service, this information is provided back to the API Consumer
           operationId: EnergyConsumptionNotification
           parameters:
             - $ref: '#/components/parameters/x-correlator'
           security:
-          - notificationsBearerAuth: []
+            - notificationsBearerAuth: []
           requestBody:
             description: payload containing the calculated energy consumption
             content:
@@ -329,7 +329,7 @@ components:
                no longer interested in further updates
               headers:
                 x-correlator:
-                  $ref: '#/components/headers/x-correlator'  
+                  $ref: '#/components/headers/x-correlator'
     onCarbonFootprintCalculation:
       # when data is sent, it will be sent to the callback url provided
       '{$request.body.notificationSink.sink}':
@@ -338,13 +338,13 @@ components:
             - Carbon footprint Callback Operation
           summary: Provides back the result of the analysis on the carbon
             footprint
-          description: once the system as calculated the carbon footprint of 
+          description: once the system as calculated the carbon footprint of
            the service, this information is provided back to the API Consumer
           operationId: EnergyConsumptionNotification
           parameters:
             - $ref: '#/components/parameters/x-correlator'
           security:
-          - notificationsBearerAuth: []            
+            - notificationsBearerAuth: []
           requestBody:
             description: payload containing the calculated energy consumption
             content:
@@ -363,7 +363,7 @@ components:
                no longer interested in further updates
               headers:
                 x-correlator:
-                  $ref: '#/components/headers/x-correlator'                          
+                  $ref: '#/components/headers/x-correlator'
   ############################################################################
   #                                 Resources                                #
   ############################################################################
@@ -423,25 +423,25 @@ components:
               application. The Telco Platform generates this identifier when
               the application is submitted over the NBI.
         TimePeriod:
-         properties:
-          startDate:
-           type: string
-           format: date-time
-           description: An instant of time, starting of the TimePeriod.
-          endDate:
-           type: string
-           format: date-time
-           description: An instant of time, ending of the TimePeriod. If not
-            included, then the period has no ending date.
-         required:
-          - startDate
+          properties:
+            startDate:
+              type: string
+              format: date-time
+              description: An instant of time, starting of the TimePeriod.
+            endDate:
+              type: string
+              format: date-time
+              description: An instant of time, ending of the TimePeriod.
+                If not included, then the period has no ending date.
+          required:
+            - startDate
         notificationSink:
-          $ref: '#/components/schemas/NotificationSink'    
+          $ref: '#/components/schemas/NotificationSink'
         RequestID:
           type: string
           description: Identifier for the request. This
            parameter is returned by the API and must be used to update it.
-          readOnly: true 
+          readOnly: true
       required:
         - Service
         - notificationSink
@@ -450,7 +450,7 @@ components:
       type: string
       format: date-time
       description: |
-        Timestamp of when the occurrence happened. Must adhere to RFC 3339. 
+        Timestamp of when the occurrence happened. Must adhere to RFC 3339.
         WARN: This optional field in CloudEvents specification is required in
         CAMARA APIs implementation.
       example: '2018-04-05T17:31:00Z'
@@ -504,7 +504,7 @@ components:
           enum:
             - application/json
         time:
-          $ref: "#/components/schemas/DateTime"      
+          $ref: "#/components/schemas/DateTime"
     CloudEventEnergy:
       description: provides back the energy consumption for the Service. The
         result of the analysis is a floating point number. The unit of measure
@@ -526,7 +526,7 @@ components:
             returned back via a callback
     CloudEventCarbonFootprint:
       description: provides back the carbon footprint of the Service. The result
-       of the analysis is a floating point number. The unit of measure is 
+       of the analysis is a floating point number. The unit of measure is
        tonnes.
       allOf:
         - $ref: "#/components/schemas/CloudEvent"
@@ -542,7 +542,7 @@ components:
           example: 12.345
           description: the  carbon footprint for alle the instances of the
             service. The API is asynchronous, for this reason the value will be
-            returned back via a callback          
+            returned back via a callback
     ############################################################################
     #                                 Responses                                #
     ############################################################################
