@@ -32,9 +32,9 @@ The repository has no (pre)releases yet, work in progress is within the main bra
 
 ## Contributing
 * Meetings are held virtually <!-- for new, independent Sandbox API repositories request a meeting link from the LF admin team or replace the information with the existing meeting information of the Sub Project -->
-    * Schedule: !! tbd
-    * [Registration / Join](https://zoom-lfx.platform.linuxfoundation.org/meetings/telcoapi) !! Update this link with your meeting registration/join link and delete the task
-    * Minutes: Access [meeting minutes](https://lf-camaraproject.atlassian.net/wiki/x/AgDe) !! update this link to your wiki page using the "Share" link and delete the task
+    * Schedule: Bi-Weekly, Tuesday 13:00 – 14:00 UCT
+    * [Registration / Join](https://zoom-lfx.platform.linuxfoundation.org/meeting/99704469014?password=31affe33-8c78-42f3-9cec-32efee113700)
+    * Minutes: Access [meeting minutes](https://lf-camaraproject.atlassian.net/wiki/spaces/CAM/pages/67076164)
 * Mailing List
     <!-- Note: the $mailinglistname$ is either already existing (for API Repositories within a Sub Projects) or will be created by the CAMARA Admin Team. -->
     * Subscribe / Unsubscribe to the mailing list https://lists.camaraproject.org/g/sp-efn.
