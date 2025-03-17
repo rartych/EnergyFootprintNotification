@@ -5,11 +5,11 @@
 Checklist for API call-forwarding-signal wip
 
 
-| Nr | API release assets  | alpha | release-candidate |  public-release<br>initial | public-release<br> stable | Status | Comments |
+| Nr | API release assets  | alpha | release-candidate |  initial<br>public | stable<br> public | Status | Reference information |
 |----|----------------------------------------------|:-----:|:-----------------:|:-------:|:------:|:----:|:----|
 |  1 | API definition                               |   M   |         M         |    M    |    M   |   Y  | [link](/code/API_definitions/energy_footprint_notification.yaml) |
-|  2 | Design guidelines from Commonalities applied |   O   |         M         |    M    |    M   |   Y  |      |
-|  3 | Guidelines from ICM applied                  |   O   |         M         |    M    |    M   |   Y  |      |
+|  2 | Design guidelines from Commonalities applied |   O   |         M         |    M    |    M   |   Y  | [r2.3](https://github.com/camaraproject/Commonalities/releases/tag/r2.3) |
+|  3 | Guidelines from ICM applied                  |   O   |         M         |    M    |    M   |   Y  | [r2.3](https://github.com/camaraproject/IdentityAndConsentManagement/releases/tag/r2.3) |
 |  4 | API versioning convention applied            |   M   |         M         |    M    |    M   |   Y  | wip |
 |  5 | API documentation                            |   M   |         M         |    M    |    M   |   Y  | inline in YAML |
 |  6 | User stories                                 |   O   |         O         |    O    |    M   |   Y  | [link](/documentation/API_documentation/EFN_UserStory_UseCase_1.md) |
