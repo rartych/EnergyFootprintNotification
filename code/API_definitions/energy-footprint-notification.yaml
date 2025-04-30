@@ -506,6 +506,9 @@ components:
             must be "application/json" for CAMARA APIs'
           enum:
             - application/json
+        data:
+          type: object
+          description: Event details payload described in each CAMARA API and referenced by its type
         time:
           $ref: "#/components/schemas/DateTime"
     CloudEventEnergy:
@@ -515,18 +518,22 @@ components:
       allOf:
         - $ref: "#/components/schemas/CloudEvent"
       properties:
-        requestID:
-          type: string
-          description: Identifier for the request. This
-           parameter correlates this response with the request.
-          readOnly: false
-        energyConsumption:
-          type: number
-          format: float
-          example: 12.345
-          description: the  energy consumption for all the instances of the
-            service. The API is asynchronous, for this reason the value will be
-            returned back via a callback
+        data:
+          type: object
+          description: Event details payload
+          properties:
+            requestID:
+              type: string
+              description: Identifier for the request. This
+               parameter correlates this response with the request.
+              readOnly: false
+            energyConsumption:
+              type: number
+              format: float
+              example: 12.345
+              description: the  energy consumption for all the instances of the
+                service. The API is asynchronous, for this reason the value will be
+                returned back via a callback
     CloudEventCarbonFootprint:
       description: provides back the carbon footprint of the Service. The result
        of the analysis is a floating point number. The unit of measure is
@@ -534,18 +541,22 @@ components:
       allOf:
         - $ref: "#/components/schemas/CloudEvent"
       properties:
-        requestID:
-          type: string
-          description: Identifier for the request. This
-           parameter correlates this response with the request.
-          readOnly: false
-        carbonFootprint:
-          type: number
-          format: float
-          example: 12.345
-          description: the  carbon footprint for all the instances of the
-            service. The API is asynchronous, for this reason the value will be
-            returned back via a callback
+        data:
+          type: object
+          description: Event details payload
+          properties:
+            requestID:
+              type: string
+              description: Identifier for the request. This
+               parameter correlates this response with the request.
+              readOnly: false
+            carbonFootprint:
+              type: number
+              format: float
+              example: 45.568
+              description: the  carbon footprint for all the instances of the
+                service. The API is asynchronous, for this reason the value will be
+                returned back via a callback
     ############################################################################
     #                                 Responses                                #
     ############################################################################
