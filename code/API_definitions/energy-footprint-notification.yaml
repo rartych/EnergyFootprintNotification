@@ -414,7 +414,7 @@ components:
         Application.
       type: object
       properties:
-        Service:
+        service:
           type: array
           description: list of Application Instance Identifiers. This are the
             instances of the applications producing the Service under analysis.
@@ -425,7 +425,7 @@ components:
             description: A globally unique identifier associated with the
               application. The Telco Platform generates this identifier when
               the application is submitted over the NBI.
-        TimePeriod:
+        timePeriod:
           properties:
             startDate:
               type: string
@@ -440,7 +440,7 @@ components:
             - startDate
         notificationSink:
           $ref: '#/components/schemas/NotificationSink'
-        RequestID:
+        requestID:
           type: string
           description: Identifier for the request. This
            parameter is returned by the API and must be used to update it.
@@ -515,12 +515,12 @@ components:
       allOf:
         - $ref: "#/components/schemas/CloudEvent"
       properties:
-        RequestID:
+        requestID:
           type: string
           description: Identifier for the request. This
            parameter correlates this response with the request.
           readOnly: false
-        EnergyConsumption:
+        energyConsumption:
           type: number
           format: float
           example: 12.345
@@ -534,12 +534,12 @@ components:
       allOf:
         - $ref: "#/components/schemas/CloudEvent"
       properties:
-        RequestID:
+        requestID:
           type: string
           description: Identifier for the request. This
            parameter correlates this response with the request.
           readOnly: false
-        CarbonFootprint:
+        carbonFootprint:
           type: number
           format: float
           example: 12.345
