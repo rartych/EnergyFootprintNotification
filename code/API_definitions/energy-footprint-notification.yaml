@@ -145,12 +145,6 @@ tags:
     description: Request information on the energy consumption of the service.
   - name: Carbon footprint information retrieval
     description: Request information on the carbon footprint for the service.
-  - name: Energy consumption Callback Operation
-    description: callback to provide the energy consumption data to the API
-     Consumer
-  - name: Carbon footprint Callback Operation
-    description: callback to provide the energy consumption data to the API
-     Consumer
 ############################################################################
 #                                     Paths                                #
 ############################################################################
@@ -303,8 +297,6 @@ components:
       # when data is sent, it will be sent to the callback url provided
       '{$request.body.notificationSink.sink}':
         post:
-          tags:
-            - Energy consumption Callback Operation
           summary: Provides back the result of the analysis on the energy
            consumption
           description: once the system has calculated the energy consumption of
@@ -337,8 +329,6 @@ components:
       # when data is sent, it will be sent to the callback url provided
       '{$request.body.notificationSink.sink}':
         post:
-          tags:
-            - Carbon footprint Callback Operation
           summary: Provides back the result of the analysis on the carbon
             footprint
           description: once the system has calculated the carbon footprint of
