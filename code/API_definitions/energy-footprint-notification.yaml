@@ -412,7 +412,7 @@ components:
           description: list of Application Instance Identifiers. This are the
             instances of the applications producing the Service under analysis.
           items:
-           $ref: '#/components/schemas/AppInstanceId'
+            $ref: '#/components/schemas/AppInstanceId'
         timePeriod:
           properties:
             startDate:
