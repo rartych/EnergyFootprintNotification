@@ -29,11 +29,14 @@ info:
     EnergyFootprintNotification/blob/main/documentation/API_documentation/\
     EFN_UserStory_UseCase_1.md)\
     \
-    **The parameters of the EFN API are:**\
+    **The main elements of the EFN API are:**\
     \
     **TargetRequest:**
     Provides to the API Producer the information about the target Service (as a
-    set of application instances) and the period of time of interest.\
+    set of applications) and the period of time of interest.
+    It includes the paramenter "service" wich is an array of application
+    identifiers. The application identifiers are provided by the CAMARA API
+    used to deploy the applications (e.g. the Edge Application Management API).\
     \
     **EnergyResponse:**
     Provides to the API Consumer the requested information about the energy
@@ -74,7 +77,7 @@ info:
     for their energy consumption are the one managed by the Operator and that
     run on top of the Operator’s infrastructure. The Service is deployed and
     managed via the Operator Platform (e.g via the [CAMARA Edge Cloud APIs](htt\
-    ps://github.com/camaraproject/EdgeCloud). Consequently, the Operator
+    ps://github.com/camaraproject/EdgeCloud)). Consequently, the Operator
     Platform is aware of all the active instances supporting the Service and it
     is also aware of the energy consumption in the Data Centers hosting the
     applications instances providing the Service. The Operator's Network is
@@ -397,7 +400,7 @@ components:
               enum:
                 - "bearer"
     TargetRequest:
-      description: resource containing the Application under analysis and the
+      description: resource containing the Service under analysis and the
         callback information for the API Consumer to be notified with the
         results of the analysis. If no "TimePeriod" is provided the analysis
         is performed from the activation of the first instance of the
@@ -409,12 +412,7 @@ components:
           description: list of Application Instance Identifiers. This are the
             instances of the applications producing the Service under analysis.
           items:
-            type: string
-            format: uuid
-            example: "6B29FC40-CA47-1067-B31D-00DD010662DA"
-            description: A globally unique identifier associated with the
-              application. The Telco Platform generates this identifier when
-              the application is submitted over the NBI.
+           $ref: '#/components/schemas/AppInstanceId'
         timePeriod:
           properties:
             startDate:
@@ -439,6 +437,14 @@ components:
         - Service
         - notificationSink
         - notificationAuthToken
+    AppInstanceId:
+      type: string
+      format: uuid
+      description: |
+        A globally unique identifier associated with a running
+        instance of an application.
+        Edge Cloud Platform generates this identifier when the
+        instantiation in the Edge Cloud Zone is successful
     DateTime:
       type: string
       format: date-time
@@ -498,7 +504,8 @@ components:
             - application/json
         data:
           type: object
-          description: Event details payload described in each CAMARA API and referenced by its type
+          description: Event details payload described in each CAMARA API and
+            referenced by its type
         time:
           $ref: "#/components/schemas/DateTime"
     CloudEventEnergy:
