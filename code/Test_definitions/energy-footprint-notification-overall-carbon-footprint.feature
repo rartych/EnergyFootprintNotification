@@ -1,4 +1,4 @@
-Feature: CAMARA Energy Footprint Notification API vWIP - Operation overall-energy-consumption
+Feature: CAMARA Energy Footprint Notification API vWIP - Operation overall-carbon-footprint
   # Input to be provided by the implementation to the tester
   #
   # Implementation indications:
@@ -29,7 +29,9 @@ Feature: CAMARA Energy Footprint Notification API vWIP - Operation overall-energ
     # The response has to comply with the generic response schema which is part of the spec
     And the response body complies with the OAS schema at "/components/schemas/TargetRequest"
 	And "$.requestID" is valorised
-	And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink" with a body compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation" carrying the information defined in "/components/schemas/CloudEventEnergy"
+	And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink"
+	And the callback body is compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation"
+	And the callback carries the information defined in "/components/schemas/CloudEventEnergy"
 	And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-energy-consumption"
 	And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter"$.carbonFootprint" valorised with the aspected value
 	
