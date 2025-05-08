@@ -13,7 +13,7 @@ Checklist for API call-forwarding-signal wip
 |  4 | API versioning convention applied            |   M   |         M         |    M    |    M   |   Y  | wip |
 |  5 | API documentation                            |   M   |         M         |    M    |    M   |   Y  | inline in YAML |
 |  6 | User stories                                 |   O   |         O         |    O    |    M   |   Y  | [link](/documentation/API_documentation/EFN_UserStory_UseCase_1.md) |
-|  7 | Basic API test cases & documentation         |   O   |         M         |    M    |    M   |   N  |  |
+|  7 | Basic API test cases & documentation         |   O   |         M         |    M    |    M   |   Y  | [Test-EC](https://github.com/FabrizioMoggio/EnergyFootprintNotification/blob/R-Checklist/code/Test_definitions/energy-footprint-notification-overall-energy-consumption.feature), [Test-CF](https://github.com/camaraproject/EnergyFootprintNotification/blob/main/code/Test_definitions/energy-footprint-notification-overall-carbon-footprint.feature) |
 |  8 | Enhanced API test cases & documentation      |   O   |         O         |    O    |    M   |   N  |  |
 |  9 | Test result statement                        |   O   |         O         |    O    |    M   |   N  |      |
 | 10 | API release numbering convention applied     |   M   |         M         |    M    |    M   |   N  |  |
