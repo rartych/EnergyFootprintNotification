@@ -434,9 +434,8 @@ components:
            parameter is returned by the API and must be used to update it.
           readOnly: true
       required:
-        - Service
+        - service
         - notificationSink
-        - notificationAuthToken
     AppInstanceId:
       type: string
       format: uuid
