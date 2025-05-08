@@ -1,11 +1,11 @@
 Feature: CAMARA Energy Footprint Notification API vWIP - Operation overall-energy-consumption
-  # Input to be provided by the implementation to the tester
-  #
-  # Implementation indications:
-  #
-  # Testing assets:
-  # * One or more application instances whose energy consumption can be evaluated.
-  #
+# Input to be provided by the implementation to the tester
+#
+# Implementation indications:
+#
+# Testing assets:
+# * One or more application instances whose energy consumption can be evaluated.
+#
   Background: Common energy-footprint-notification setup
     Given the path "/overall-energy-consumption"
     And the header "Content-Type" is set to "application/json"
@@ -29,9 +29,12 @@ Feature: CAMARA Energy Footprint Notification API vWIP - Operation overall-energ
     # The response has to comply with the generic response schema which is part of the spec
     And the response body complies with the OAS schema at "/components/schemas/TargetRequest"
 	And "$.requestID" is valorised
-	And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink" with a body compliant with the OAS schema at "/components/callbacks/onEnergyConsumptionCalculation" carrying the information defined in "/components/schemas/CloudEventEnergy"
-	And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-energy-consumption"
-	And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter"$.energyConsumption" valorised with the aspected value
+    # The received callback must be compliant and should carry the aspected values
+    And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink"
+    And the callback body is compliant with the OAS schema at "/components/callbacks/onEnergyConsumptionCalculation"
+    And the callback carries the information defined in "/components/schemas/CloudEventEnergy"
+    And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-energy-consumption"
+    And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter"$.energyConsumption" valorised with the aspected value
 	
   @overall-energy-consumption_02_more_instances
   Scenario: multiple instance ids are provided
@@ -45,6 +48,10 @@ Feature: CAMARA Energy Footprint Notification API vWIP - Operation overall-energ
     # The response has to comply with the generic response schema which is part of the spec
     And the response body complies with the OAS schema at "/components/schemas/TargetRequest"
 	And "$.requestID" is valorised
-	And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink" with a body compliant with the OAS schema at "/components/callbacks/onEnergyConsumptionCalculation" carrying the information defined in "/components/schemas/CloudEventEnergy"
-	And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-energy-consumption"
-	And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter"$.energyConsumption" valorised with the aspected value as sum of the energy concumption of all the application instances
+    # The received callback must be compliant and should carry the aspected values
+    And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink"
+    And the callback body is compliant with the OAS schema at "/components/callbacks/onEnergyConsumptionCalculation"
+    And the callback carries the information defined in "/components/schemas/CloudEventEnergy"
+    And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-energy-consumption"
+    And "/components/schemas/CloudEventEnergy" in the callback should contain the parameter"$.energyConsumption"
+    And the parameter"$.energyConsumption" should be valorised with the aspected value as sum of the energy concumption of all the application instances

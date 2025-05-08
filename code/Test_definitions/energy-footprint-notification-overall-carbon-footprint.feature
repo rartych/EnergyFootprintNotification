@@ -54,4 +54,4 @@ Feature: CAMARA Energy Footprint Notification API vWIP - Operation overall-carbo
     And the callback carries the information defined in "/components/schemas/CloudEventCarbonFootprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-carbon-footprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter"$.carbonFootprint"
-    And the parameter"$.carbonFootprint" should be valorised with the aspected value as sum of the energy concumption of all the application instances
+    And the parameter"$.carbonFootprint" should be valorised with the aspected value as sum of the carbon footprint of all the application instances
