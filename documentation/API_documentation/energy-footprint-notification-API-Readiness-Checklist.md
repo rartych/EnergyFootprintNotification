@@ -2,7 +2,7 @@
 
 # API Readiness Checklist
 
-Checklist for API call-forwarding-signal wip
+Checklist for API call-forwarding-signal 0.1.0-alpha.1
 
 
 | Nr | API release assets  | alpha | release-candidate |  initial<br>public | stable<br> public | Status | Reference information |
