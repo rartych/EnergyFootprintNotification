@@ -16,9 +16,17 @@ The below sections record the changes for each API version in each release as fo
 
 # r1.1
 
-**This is the first pre-release of the CAMARA EnergyFootprintNotification API**
+## Release Notes
 
-The version number for the YAML file is v0.1.0-alpha.1
+This release contains the definition and documentation of:
+* energy-footprint-notification v0.1.0-alpha.1
+
+The API definition(s) are based on
+* Commonalities v0.6.0
+* Identity and Consent Management v0.4.0
+
+## energy-footprint-notification v0.1.0-alpha.1
+This is the first pre-release of the CAMARA EnergyFootprintNotification API supporting the retrival of energy consumption information and carbon footprint for a Service running over some application instances tupically edge located.
 
 - API definition **with inline documentation**:
   - OpenAPI [YAML spec file](https://github.com/camaraproject/EnergyFootprintNotification/blob/r1.1/code/API_definitions/energy-footprint-notification.yaml)
