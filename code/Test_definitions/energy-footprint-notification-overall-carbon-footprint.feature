@@ -31,8 +31,7 @@ Feature: CAMARA Energy Footprint Notification API v0.1.0-alpha.1 - Operation ove
     And "$.requestID" is valorised
     # The received callback must be compliant and should carry the aspected values
     And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink"
-    And the callback body is compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation"
-    And the callback header "x-correlator" has same value as the request header "x-correlator"
+    And the callback body is compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation" with "x-correlator" having the same value as the request header "x-correlator"
     And the callback carries the information defined in "/components/schemas/CloudEventCarbonFootprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-carbon-footprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter"$.carbonFootprint" valorised with the aspected value
@@ -51,8 +50,7 @@ Feature: CAMARA Energy Footprint Notification API v0.1.0-alpha.1 - Operation ove
     And "$.requestID" is valorised
     # The received callback must be compliant and should carry the aspected values
     And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink"
-    And the callback body is compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation"
-    And the callback header "x-correlator" has same value as the request header "x-correlator"
+    And the callback body is compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation" with "x-correlator" having the same value as the request header "x-correlator"
     And the callback carries the information defined in "/components/schemas/CloudEventCarbonFootprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-carbon-footprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter"$.carbonFootprint"
