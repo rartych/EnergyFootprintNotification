@@ -20,7 +20,7 @@ Feature: CAMARA Energy Footprint Notification API v0.1.0-alpha.1 - Operation ove
   Scenario: Common validations for any success scenario, just one instance id for an application is provided
     # Valid testing default request body compliant with the schema
     Given the request body property "$.service" carries one valid "$.AppInstanceId"
-    And "$.notificationSink" is valorised
+    And "$.notificationSink" is set to a proper value
     And the request body is set to a valid request body
     When the HTTP "POST" request is sent
     Then the response status code is 201
@@ -28,18 +28,18 @@ Feature: CAMARA Energy Footprint Notification API v0.1.0-alpha.1 - Operation ove
     And the response header "x-correlator" has same value as the request header "x-correlator"
     # The response has to comply with the generic response schema which is part of the spec
     And the response body complies with the OAS schema at "/components/schemas/TargetRequest"
-    And "$.requestID" is valorised
+    And "$.requestID" is set to a proper value
     # The received callback must be compliant and should carry the aspected values
     And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink"
     And the callback body is compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation" with "x-correlator" having the same value as the request header "x-correlator"
     And the callback carries the information defined in "/components/schemas/CloudEventCarbonFootprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-carbon-footprint"
-    And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter"$.carbonFootprint" valorised with the aspected value
+    And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter"$.carbonFootprint" set to the aspected value
 
   @overall-energy-consumption_02_more_instances
   Scenario: multiple instance ids are provided
     Given the request body property "$.service" carries an array of valid "$.AppInstanceId"
-    And "$.notificationSink" is valorised
+    And "$.notificationSink" is set to a proper value
     And the request body is set to a valid request body
     When the HTTP "POST" request is sent
     Then the response status code is 201
@@ -47,11 +47,11 @@ Feature: CAMARA Energy Footprint Notification API v0.1.0-alpha.1 - Operation ove
     And the response header "x-correlator" has same value as the request header "x-correlator"
     # The response has to comply with the generic response schema which is part of the spec
     And the response body complies with the OAS schema at "/components/schemas/TargetRequest"
-    And "$.requestID" is valorised
+    And "$.requestID" is set to a proper value
     # The received callback must be compliant and should carry the aspected values
     And within a limited period of time I should receive a callback at "/components/schemas/NotificationSink/sink"
     And the callback body is compliant with the OAS schema at "/components/callbacks/onCarbonFootprintCalculation" with "x-correlator" having the same value as the request header "x-correlator"
     And the callback carries the information defined in "/components/schemas/CloudEventCarbonFootprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter "$.requestID" with the same value as in the 201 response of "/overall-carbon-footprint"
     And "/components/schemas/CloudEventCarbonFootprint" in the callback should contain the parameter"$.carbonFootprint"
-    And the parameter"$.carbonFootprint" should be valorised with the aspected value as sum of the carbon footprint of all the application instances
+    And the parameter"$.carbonFootprint" should be se to the aspected value as sum of the carbon footprint of all the application instances
