@@ -23,12 +23,15 @@ Sandbox API Repository to describe, develop, document, and test the EnergyFootpr
 
 ## Release Information
 
-The repository has no (pre)releases yet, work in progress is within the main branch.
-<!-- Optional: an explicit listing of the latest (pre-)release with additional information, e.g. links to the API definitions -->
-<!-- In addition use/uncomment one or multiple the following alternative options when becoming applicable -->
-<!-- Pre-releases of this sub project are available in https://github.com/camaraproject/EnergyFootprintNotification/releases -->
-<!-- The latest public release is available here: https://github.com/camaraproject/EnergyFootprintNotification/releases/latest -->
-<!-- For changes see [CHANGELOG.md](https://github.com/camaraproject/EnergyFootprintNotification/blob/main/CHANGELOG.md) -->
+Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
+* **The latest available version (pre-release) of the CAMARA EnergyFootprintNotification API is v0.9.0-alpha.1**
+* The pre-release Tag is [r1.1](https://github.com/camaraproject/EnergyFootprintNotification/releases/tag/r1.1).
+- API definition **with inline documentation**:
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/EnergyFootprintNotification/blob/r1.1/code/API_definitions/energy-footprint-notification.yaml)
+  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/EnergyFootprintNotification/r1.1/code/API_definitions/energy-footprint-notification.yaml&nocors)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/EnergyFootprintNotification/r1.1/code/API_definitions/energy-footprint-notification.yaml)
+
+For changes see [CHANGELOG.md](https://github.com/camaraproject/TrafficInfluence/blob/main/CHANGELOG.md)
 
 ## Contributing
 * Meetings are held virtually <!-- for new, independent Sandbox API repositories request a meeting link from the LF admin team or replace the information with the existing meeting information of the Sub Project -->
