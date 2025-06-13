@@ -131,7 +131,7 @@ info:
     (FAQs will be added in a later version of the documentation)
     ## Release Notes
     First draft for the EFN API.
-  version: 0.1.0-alpha.1
+  version: wip
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -143,7 +143,7 @@ externalDocs:
 #                                     Servers                              #
 ############################################################################
 servers:
-  - url: "{apiRoot}/energy-footprint-notification/v0.1.0-alpha.1"
+  - url: "{apiRoot}/energy-footprint-notification/vwip"
     variables:
       apiRoot:
         default: http://localhost:9091
@@ -293,15 +293,12 @@ components:
       in: header
       description: Correlation id for the different services
       schema:
-        type: string
-        pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
-        example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+        $ref: "#/components/schemas/XCorrelator"
   headers:
     x-correlator:
       description: Correlation id for the different services
       schema:
-        type: string
-        pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
+        $ref: "#/components/schemas/XCorrelator"
   #########################################################################
   #                             Events/Callbacks                          #
   #########################################################################
@@ -563,6 +560,10 @@ components:
               description: the  carbon footprint for all the instances of the
                 service. The API is asynchronous, for this reason the value will be
                 returned back via a callback
+    XCorrelator:
+      type: string
+      pattern: ^[a-zA-Z0-9-_:;.\/<>{}]{0,256}$
+      example: "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
     ############################################################################
     #                                 Responses                                #
     ############################################################################
