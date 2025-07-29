@@ -1,4 +1,3 @@
----
 openapi: 3.0.3
 ############################################################################
 #                                     API info                             #
@@ -138,7 +137,7 @@ info:
   x-camara-commonalities: 0.5
 externalDocs:
   description: Product documentation at Camara
-  url: https://github.com/camaraproject/TBD
+  url: https://github.com/camaraproject/EnergyFN
 ############################################################################
 #                                     Servers                              #
 ############################################################################
