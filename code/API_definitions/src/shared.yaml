@@ -5,3 +5,4 @@ info:
   description: |
     Subscription and notification pattern components shared across APIs
     in the EnergyFootprintNotification family.
+paths: {}

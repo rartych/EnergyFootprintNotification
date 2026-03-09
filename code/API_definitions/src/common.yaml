@@ -417,26 +417,7 @@ components:
       description: Timestamp of when the occurrence happened. It must follow [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) and must have time zone.
       example: "2018-04-05T17:31:00Z"
 
-    EventApiSpecific1:
-      description: event structure for event-type event 1
-      allOf:
-        - $ref: "#/components/schemas/CloudEvent"
-        - type: object
 
-    EventApiSpecific2:
-      description: event structure for event-type event 2
-      allOf:
-        - $ref: "#/components/schemas/CloudEvent"
-        - type: object
-
-    EventSubscriptionStarted:
-      description: event structure for event subscription started
-      allOf:
-        - $ref: "#/components/schemas/CloudEvent"
-        - type: object
-          properties:
-            data:
-              $ref: "#/components/schemas/SubscriptionStarted"
 
     SubscriptionStarted:
       description: Event detail structure for subscription started event
