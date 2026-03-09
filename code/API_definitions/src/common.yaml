@@ -439,44 +439,44 @@ components:
         - SUBSCRIPTION_CREATED
 
   responses:
-#######################################################
-#######################################################
-# ERROR RESPONSE SCHEMA TEMPLATE
-#   - Objective: Make normative error `status` and `code` values
-#   - Schema Template rationale:
-#     - The `allOf` in content.application/json.schema allows a combination of both the generic ErrorInfo schema and the specific schema for this error response,
-#       which validates that `status` and `code` have only the specified values.
-#       This `allOf` is used without discriminator because it does not imply any hierarchy between the models, just 2 schemas that must be independently validated.
-#######################################################
-#    ErrorResponseSchema:
-#      ...
-#      content:
-#        application/json:
-#          schema:
-#            allOf:
-#              - $ref: '#/components/schemas/ErrorInfo'
-#              - type: object
-#                properties:
-#                  status:
-#                    enum:
-#                      - <status>
-#                  code:
-#                    enum:
-#                      - <code1>
-#                      - <code2>
-#          examples:
-#            ExampleKey1:
-#              value:
-#                status: <status>
-#                code: <code1>
-#                message: <message1>
-#            ExampleKey2:
-#              value:
-#                status: <status>
-#                code: <code2>
-#                message: <message2>
-#######################################################
-#######################################################
+    #######################################################
+    #######################################################
+    # ERROR RESPONSE SCHEMA TEMPLATE
+    #   - Objective: Make normative error `status` and `code` values
+    #   - Schema Template rationale:
+    #     - The `allOf` in content.application/json.schema allows a combination of both the generic ErrorInfo schema and the specific schema for this error response,
+    #       which validates that `status` and `code` have only the specified values.
+    #       This `allOf` is used without discriminator because it does not imply any hierarchy between the models, just 2 schemas that must be independently validated.
+    #######################################################
+    #    ErrorResponseSchema:
+    #      ...
+    #      content:
+    #        application/json:
+    #          schema:
+    #            allOf:
+    #              - $ref: '#/components/schemas/ErrorInfo'
+    #              - type: object
+    #                properties:
+    #                  status:
+    #                    enum:
+    #                      - <status>
+    #                  code:
+    #                    enum:
+    #                      - <code1>
+    #                      - <code2>
+    #          examples:
+    #            ExampleKey1:
+    #              value:
+    #                status: <status>
+    #                code: <code1>
+    #                message: <message1>
+    #            ExampleKey2:
+    #              value:
+    #                status: <status>
+    #                code: <code2>
+    #                message: <message2>
+    #######################################################
+    #######################################################
     Generic400:
       description: Bad Request
       headers:
@@ -496,7 +496,7 @@ components:
                     enum:
                       - INVALID_ARGUMENT
                       - OUT_OF_RANGE
-                      #  - "{{SPECIFIC_CODE}}"
+                        #  - "{{SPECIFIC_CODE}}"
           examples:
             GENERIC_400_INVALID_ARGUMENT:
               description: Invalid Argument. Generic Syntax Exception
@@ -510,12 +510,12 @@ components:
                 status: 400
                 code: OUT_OF_RANGE
                 message: Client specified an invalid range.
-            #  GENERIC_400_{{SPECIFIC_CODE}}:
-            #    description: Specific Syntax Exception regarding a field that is relevant in the context of the API
-            #    value:
-            #      status: 400
-            #      code: "{{SPECIFIC_CODE}}"
-            #      message: Message for specific code
+                #  GENERIC_400_{{SPECIFIC_CODE}}:
+                #    description: Specific Syntax Exception regarding a field that is relevant in the context of the API
+                #    value:
+                #      status: 400
+                #      code: "{{SPECIFIC_CODE}}"
+                #      message: Message for specific code
     Generic401:
       description: Unauthorized
       headers:
@@ -560,7 +560,7 @@ components:
                     enum:
                       - PERMISSION_DENIED
                       - INVALID_TOKEN_CONTEXT
-                      #  - "{{SPECIFIC_CODE}}"
+                        #  - "{{SPECIFIC_CODE}}"
           examples:
             GENERIC_403_PERMISSION_DENIED:
               description: Permission denied. OAuth2 token access does not have the required scope or when the user fails operational security
