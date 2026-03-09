@@ -1,0 +1,9 @@
+# redocly.yaml
+apis:
+  energy-footprint-notification:
+    root: src/energy-footprint-notification.yaml
+    output: energy-footprint-notification.yaml
+
+resolve:
+  http:
+    enabled: false

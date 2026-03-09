@@ -1,0 +1,7 @@
+openapi: 3.0.3
+info:
+  title: Energy Footprint Notification — Shared Components
+  version: wip
+  description: |
+    Subscription and notification pattern components shared across APIs
+    in the EnergyFootprintNotification family.
