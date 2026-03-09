@@ -720,13 +720,12 @@ components:
                 status: 409
                 code: INCOMPATIBLE_STATE
                 message: Resource must be in AVAILABLE state to extend. Current state is UNAVAILABLE.
-
-            #  GENERIC_409_{{SPECIFIC_CODE}}:
-            #    description: Specific conflict situation that is relevant in the context of the API
-            #    value:
-            #      status: 409
-            #      code: "{{SPECIFIC_CODE}}"
-            #      message: Message for specific code
+                #  GENERIC_409_{{SPECIFIC_CODE}}:
+                #    description: Specific conflict situation that is relevant in the context of the API
+                #    value:
+                #      status: 409
+                #      code: "{{SPECIFIC_CODE}}"
+                #      message: Message for specific code
     Generic410:
       description: Gone
       headers:
@@ -849,12 +848,12 @@ components:
                 status: 422
                 code: UNNECESSARY_IDENTIFIER
                 message: The device is already identified by the access token.
-            #  GENERIC_422_{{SPECIFIC_CODE}}:
-            #    description: Any semantic condition associated to business logic, specifically related to a field or data structure
-            #    value:
-            #      status: 422
-            #      code: "{{SPECIFIC_CODE}}"
-            #      message: Message for specific code
+                #  GENERIC_422_{{SPECIFIC_CODE}}:
+                #    description: Any semantic condition associated to business logic, specifically related to a field or data structure
+                #    value:
+                #      status: 422
+                #      code: "{{SPECIFIC_CODE}}"
+                #      message: Message for specific code
     Generic429:
       description: Too Many Requests
       headers:
