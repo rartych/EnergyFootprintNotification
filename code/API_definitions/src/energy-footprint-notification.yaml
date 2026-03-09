@@ -1,10 +1,9 @@
----
 openapi: 3.0.3
 ############################################################################
 #                                     API info                             #
 ############################################################################
 info:
-  title: Energy Footprint Notification
+  title: ENERGY Footprint Notification
   description: |
     ## Overview
     The Energy Footprint Notification API provides the API Consumer
