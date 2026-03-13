@@ -4,7 +4,7 @@ openapi: 3.0.3
 #                                     API info                             #
 ############################################################################
 info:
-  title: EnergY Footprint Notification
+  title: EnergY Footprint Notification.
   description: |
     ## Overview
     The Energy Footprint Notification API provides the API Consumer
@@ -524,6 +524,7 @@ components:
           description: identifier of this event, that must be unique in the
             source context.
           minLength: 1
+          maxLength: 66
         source:
           $ref: './common.yaml#/components/schemas/Source'
         type:
