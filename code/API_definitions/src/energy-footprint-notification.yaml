@@ -197,8 +197,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ReportCreationRequest'
-        "400":
-          $ref: './common.yaml#/components/responses/Generic400'
         "401":
           $ref: './common.yaml#/components/responses/Generic401'
         "403":
