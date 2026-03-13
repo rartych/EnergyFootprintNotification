@@ -4,7 +4,7 @@ openapi: 3.0.3
 #                                     API info                             #
 ############################################################################
 info:
-  title: Energy Footprint Notification
+  title: EnergY Footprint Notification.
   description: |
     ## Overview
     The Energy Footprint Notification API provides the API Consumer
@@ -197,8 +197,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ReportCreationRequest'
-        "400":
-          $ref: './common.yaml#/components/responses/Generic400'
         "401":
           $ref: './common.yaml#/components/responses/Generic401'
         "403":
@@ -479,7 +477,10 @@ components:
       required:
         - service
         - subscriptionRequest
+        - dummy
       properties:
+        dummy:
+          type: string
         service:
           type: array
           description: List of Application Instance Identifiers. These are the
@@ -526,6 +527,7 @@ components:
           description: identifier of this event, that must be unique in the
             source context.
           minLength: 1
+          maxLength: 66
         source:
           $ref: './common.yaml#/components/schemas/Source'
         type:
