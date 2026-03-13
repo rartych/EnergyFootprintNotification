@@ -477,7 +477,10 @@ components:
       required:
         - service
         - subscriptionRequest
+        - dummy
       properties:
+        dummy:
+          type: string
         service:
           type: array
           description: List of Application Instance Identifiers. These are the
